@@ -1,0 +1,43 @@
+{
+    "packager": {
+        "github": "https://github.com/Bali10050/Darkly",
+        "clone-dest": "/tmp/Darkly",
+        "sha256sum-sh": "utils/sha256sums.sh",
+        "packages": [
+            {
+                "name": "darkly",
+                "type": "AUR",
+                "paths": [
+                    {
+                        "pkgbuild": "output/AUR/darkly/PKGBUILD",
+                        "template": "templates/AUR/darkly/PKGBUILD.template"
+                    },
+                    {
+                        "srcinfo": "output/AUR/darkly/.SRCINFO",
+                        "template": "templates/AUR/darkly/.SRCINFO.template"
+                    }
+                ]
+            },
+            {
+                "name": "darkly-bin",
+                "type": "AUR",
+                "paths": [
+                    {
+                        "pkgbuild": "output/AUR/darkly-bin/PKGBUILD",
+                        "template": "templates/AUR/darkly-bin/PKGBUILD.template"
+                    },
+                    {
+                        "srcinfo": "output/AUR/darkly-bin/.SRCINFO",
+                        "template": "templates/AUR/darkly-bin/.SRCINFO.template"
+                    }
+                ]
+            },
+            {
+                "name": "darkly-copr",
+                "type": "COPR",
+                "path": "output/COPR/specs/darkly.spec",
+                "template": "templates/COPR/darkly.spec.template"
+            }
+        ]
+    }
+}

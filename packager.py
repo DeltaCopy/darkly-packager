@@ -48,6 +48,10 @@ class TemplateHelper:
                     if p["type"] == "COPR":
                         tfile = p["template"]
                         self.path = p["path"]
+                        
+                        if not os.path.exists(os.path.dirname(self.path)):
+                            self.create_output_dir()
+                            
                        
                         if os.path.exists(tfile):
                             t = Template(open(tfile).read())
@@ -73,6 +77,9 @@ class TemplateHelper:
                             if "pkgbuild" in p.keys():
                                 self.path = p["pkgbuild"]
                                 tfile = p["template"]
+                                
+                                if not os.path.exists(os.path.dirname(self.path)):
+                                    self.create_output_dir()
 
                                 if os.path.exists(tfile):
                                     t = Template(open(tfile).read())
@@ -112,6 +119,11 @@ class TemplateHelper:
         except Exception as e:
             logger.error("Exception raised in process_templates(): {0}".format(e))
             return 1
+    
+    def create_output_dir(self):
+        logger.info("Creating output directory = {0}".format(os.path.dirname(self.path)))
+        os.makedirs(os.path.dirname(self.path))
+        
 
 
 class GitHelper:

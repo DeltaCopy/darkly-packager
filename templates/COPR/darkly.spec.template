@@ -109,8 +109,6 @@ Darkly is a fork of Lightly, which in turn is forked from the Breeze theme style
 %{_bindir}/%{_style}-settings%{_qt_major_version}
 
 %{_libdir}/cmake/%{style}/
-%{_libdir}/lib%{_style}common%{_qt_major_version}.so.*
-%{_libdir}/lib%{_style}common%{_qt5_major_version}.so.*
 
 %{_qt6_plugindir}/kstyle_config/%{_style}styleconfig.so
 %{_qt6_plugindir}/org.kde.kdecoration3/org.kde.%{_style}.so

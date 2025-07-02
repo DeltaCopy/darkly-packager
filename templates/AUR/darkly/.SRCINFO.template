@@ -26,7 +26,7 @@ pkgbase = darkly
 	depends = kwindowsystem5
 	options = !emptydirs
 	options = !debug
-	source = darkly.git::git+https://github.com/Bali10050/darkly.git#tag=v${PKGVER}
+	source = https://github.com/Bali10050/darkly/archive/refs/tags/v${PKGVER}.tar.gz
 	sha256sums = ${SHA256SUM}
 
 pkgname = darkly

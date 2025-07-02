@@ -180,7 +180,7 @@ class GitHelper:
     # when traversing through the cloned src code from the git repository
     def get_sha256sums(self, latest_tag):
         logger.info("Getting sha256sum")
-        cmd = [self.sha256sums_sh, self.dest, latest_tag, self.repo]
+        cmd = [self.sha256sums_sh, latest_tag, self.repo]
         try:
             process = subprocess.Popen(
                 cmd,

@@ -180,7 +180,7 @@ class GitHelper:
     # when traversing through the cloned src code from the git repository
     def get_sha256sums(self, latest_tag):
         logger.info("Getting sha256sum")
-        cmd = [self.sha256sums_sh, latest_tag, self.repo]
+        cmd = [self.sha256sums_sh, latest_tag[1:], self.repo]
         try:
             process = subprocess.Popen(
                 cmd,
@@ -362,11 +362,14 @@ def main():
                 and "fatal: not a valid object name" not in sha256sums
             ):
                 logger.info(
-                    "Release tag = {0} | {1}".format(latest_tag, sha256sums[0].strip())
+                    "Relase asset (tarball) = {0}/releases/download/{1}.tar.gz | {2}".format(
+                        build_repo, latest_tag, sha256sums[0].strip()
+                    )
                 )
+                
                 logger.info(
-                    "Relase asset = {0}/releases/download/{1}.tar.gz | {2}".format(
-                        build_repo, latest_tag, sha256sums[1].strip()
+                    "Relase asset (zst) = {0}/releases/download/{1}/darkly-{3}-x86_64.pkg.zst  | {2}".format(
+                        build_repo, latest_tag, sha256sums[1].strip(), latest_tag[1:]
                     )
                 )
             else:

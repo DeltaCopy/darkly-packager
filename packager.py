@@ -362,7 +362,7 @@ def main():
                 and "fatal: not a valid object name" not in sha256sums
             ):
                 logger.info(
-                    "Relase asset (tarball) = {0}/releases/download/{1}.tar.gz | {2}".format(
+                    "Relase asset (tarball) = {0}/archive/refs/tags/{1}.tar.gz | {2}".format(
                         build_repo, latest_tag, sha256sums[0].strip()
                     )
                 )
